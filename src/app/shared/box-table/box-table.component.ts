@@ -22,11 +22,11 @@ export class BoxTableComponent {
     private fishService: FishService,
   ) { }
 
-  drop(event: CdkDragDrop<string[]>) {
+  drop(event: CdkDragDrop<string[]>): void {
     moveItemInArray(this.colors, event.previousIndex, event.currentIndex);
   }
 
-  changeColor(color: string) {
+  changeColor(color: string): void {
     this.fishService.setFish({color})
   }
 }
