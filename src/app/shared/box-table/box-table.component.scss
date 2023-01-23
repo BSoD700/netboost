@@ -1,0 +1,85 @@
+@import "../../styles/base/mixing";
+
+.boundary-wrapper {
+  width: 100%;
+  position: relative;
+  height: 400px;
+  border-top: 2px dashed #fff;
+  background-color: #223748;
+
+  @include md {
+    width: 400px;
+    height: 100%;
+    border-left: 2px dashed #fff;
+    border-top: none;
+  }
+
+  .box-table-wrapper {
+    width: 200px;
+    min-height: 60px;
+    background: #a7ee80;
+    border-radius: 4px;
+    overflow: hidden;
+    box-shadow: 0px 0 15px #00000063;
+    .colors {
+      width: 100%;
+    }
+    .moving-area {
+      height: 20px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 5px;
+      cursor: move;
+      .circle {
+        width: 10px;
+        height: 10px;
+        border-radius: 50%;
+        background-color: #223748;
+      }
+    }
+    .color-box {
+      width: 100%;
+      border-bottom: solid 1px #ccc;
+      color: rgba(0, 0, 0, 0.87);
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      justify-content: space-between;
+      cursor: move;
+      background: white;
+      font-size: 18px;
+      font-weight: 400;
+      &.mat-button-toggle-checked {
+        background-color: #4c862d;
+        color: #fff;
+      }
+    }
+    .cdk-drag-preview {
+      border-radius: 4px;
+      box-shadow: 0 5px 5px -3px rgba(0, 0, 0, 0.2),
+        0 8px 10px 1px rgba(0, 0, 0, 0.14), 0 3px 14px 2px rgba(0, 0, 0, 0.12);
+    }
+    .cdk-drag-placeholder {
+      opacity: 0;
+    }
+
+    .cdk-drag-animating {
+      transition: transform 250ms cubic-bezier(0, 0, 0.2, 1);
+    }
+    .cdk-drop-list-dragging {
+      cursor: move;
+      .cdk-drag {
+        transition: transform 250ms cubic-bezier(0, 0, 0.2, 1);
+      }
+    }
+
+    .color-box:last-child {
+      border: none;
+    }
+
+    &.cdk-drop-list-dragging .color-box:not(.cdk-drag-placeholder) {
+      transition: transform 250ms cubic-bezier(0, 0, 0.2, 1);
+    }
+  }
+}

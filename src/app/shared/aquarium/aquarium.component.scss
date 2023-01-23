@@ -1,0 +1,54 @@
+@import "../../styles/base/mixing";
+
+.aquarium-wrapper {
+  width: 100%;
+  position: relative;
+  height: calc(100vh - 400px);
+  overflow: hidden;
+  background-color: #c8ffff;
+  @include md {
+    width: clamp(200px, 100vw - 400px, 4000px);
+    height: clamp(100vh, 100vh - 400px, 100vh);
+  }
+  app-fish {
+    $hTime: 9s;
+    $vTime: 10s;
+    $hStartTime: -#{calc(random(450) / 10)}s;
+    $vStartTime: -#{calc(random(50) / 10)}s;
+
+    position: absolute;
+    width: 80px;
+    height: 80px;
+    animation: horizontal $hTime linear $hStartTime infinite forwards,
+      vertical $vTime linear $vStartTime infinite forwards;
+
+    @include xl {
+      $hTime: 15s;
+      $vTime: 16s;
+    }
+
+    @keyframes horizontal {
+      0% {
+        left: 0%;
+      }
+      50% {
+        left: calc(100% - 80px);
+      }
+      100% {
+        left: 0%;
+      }
+    }
+
+    @keyframes vertical {
+      0% {
+        top: 0%;
+      }
+      50% {
+        top: calc(100% - 80px);
+      }
+      100% {
+        top: 0%;
+      }
+    }
+  }
+}

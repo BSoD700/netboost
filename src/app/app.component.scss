@@ -1,0 +1,12 @@
+@import "./styles/base/mixing";
+
+.page-wrapper {
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+
+  @include md {
+    flex-direction: row;
+  }
+}

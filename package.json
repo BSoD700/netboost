@@ -2,7 +2,6 @@
   "name": "netboost",
   "version": "0.0.0",
   "scripts": {
-    "ng": "ng",
     "start": "ng serve",
     "build": "ng build",
     "watch": "ng build --watch --configuration development",
@@ -11,10 +10,12 @@
   "private": true,
   "dependencies": {
     "@angular/animations": "^14.2.0",
+    "@angular/cdk": "^13.0.0",
     "@angular/common": "^14.2.0",
     "@angular/compiler": "^14.2.0",
     "@angular/core": "^14.2.0",
     "@angular/forms": "^14.2.0",
+    "@angular/material": "^13.0.0",
     "@angular/platform-browser": "^14.2.0",
     "@angular/platform-browser-dynamic": "^14.2.0",
     "@angular/router": "^14.2.0",
@@ -27,6 +28,7 @@
     "@angular/cli": "~14.2.8",
     "@angular/compiler-cli": "^14.2.0",
     "@types/jasmine": "~4.0.0",
+    "compression-webpack-plugin": "^10.0.0",
     "jasmine-core": "~4.3.0",
     "karma": "~6.4.0",
     "karma-chrome-launcher": "~3.1.0",

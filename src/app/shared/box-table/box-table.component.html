@@ -1,0 +1,13 @@
+<div class="boundary-wrapper">
+    <div cdkDropList class="box-table-wrapper" cdkDragBoundary=".boundary-wrapper" (cdkDropListDropped)="drop($event)" cdkDrag>
+        <div class="moving-area" cdkDragHandle>
+            <div class="circle"></div>
+            <div class="circle"></div>
+            <div class="circle"></div>
+        </div>
+        <mat-button-toggle-group value="red" #selectedColor="matButtonToggleGroup" (change)="changeColor(selectedColor.value)" vertical
+                                class="colors" name="colors" aria-label="colors">
+            <mat-button-toggle class="color-box" cdkDrag *ngFor="let color of colors" [value]="color">{{color | titlecase}}</mat-button-toggle>
+        </mat-button-toggle-group>
+    </div>
+</div>
